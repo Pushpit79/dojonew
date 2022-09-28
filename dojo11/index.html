@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align:center; border: 1px black solid">
+        <h1>DOJO9</h1>
+        <p>Welcome to hammer and nail shop</p1>
+        <h1>Greeting from {NAME}</h1>
+        <img id="image" src="https://www.eteam.io/hs-fs/hubfs/Imported_Blog_Media/blog-happy-dev-int1-1.jpg?width=500&height=500&name=blog-happy-dev-int1-1.jpg">
+        <h1>Number of time clicked <span id = "Number"></span></h1>
+        <button id="button">Clicked on </button>
+        <ul id ="life"> </ul>
+    <script>
+        let s = 0
+        let num = document.getElementById("Number")
+        let image = document.getElementById("image")
+        image.addEventListener("click",function(){
+        s++
+        num.innerHTML=s;
+        })
+        let button = document.getElementById("button")
+        button.addEventListener("click",function(){
+        fetch('/api')
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data)
+        let life = document.getElementById("life")
+        var E = document.createElement("li")
+        E.innerHTML=data.number
+        life.append(E)
+});
+        })
+    </script>
+    </div>
+    
+</body>
+</html>
